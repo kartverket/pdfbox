@@ -110,7 +110,7 @@ public final class FlateFilterDecoderStream extends FilterInputStream
             // don't throw an exception, use the already read data or an empty stream
             LOG.warn("FlateFilter: premature end of stream due to a DataFormatException = "
                     + exception.getMessage());
-            return bytesDecoded > 0;
+            throw new IOException("Error: " + exception.getMessage());
         }
         return true;
     }

@@ -56,6 +56,14 @@
       <url>https://svn.apache.org/viewvc/pdfbox/branches/3.0</url>
   </scm>
 
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Kartverket Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/kartverket/pdfbox</url>
+    </repository>
+  </distributionManagement>
+
   <build>
     <pluginManagement>
         <plugins>

@@ -16,7 +16,11 @@
 --->
 
 [![codeql java](https://github.com/apache/pdfbox/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/apache/pdfbox/actions/workflows/codeql-analysis.yml/badge.svg)
- 
+
+
+# Denne forken
+Denne forken ble laget for dokumentbestilling-api, da apache/pdfbox har swallowed exceptions som vi trenger å bruke i dokumentbestilling. Den bør holdes oppdatert ved nye versjoner av apache/pdfbox 3.
+
 Apache PDFBox
 ===================================================
 

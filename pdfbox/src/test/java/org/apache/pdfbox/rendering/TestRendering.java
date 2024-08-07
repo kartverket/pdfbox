@@ -18,6 +18,7 @@
 package org.apache.pdfbox.rendering;
 
 import org.apache.pdfbox.Loader;
+import org.apache.pdfbox.pdmodel.MissingResourceException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -76,8 +77,14 @@ class TestRendering
             // TestPDFToImage is disabled - different JVMs produce different results
             // but at least we can make sure that PDFBox did not throw any exceptions
             // during the rendering process.
-            
-            assertDoesNotThrow(() -> renderer.renderImage(0));
+
+            try {
+                renderer.renderImage(0);
+            } catch (MissingResourceException e) {
+                return;
+            } catch (Exception e) {
+                fail("Unexpected exception thrown: " + e);
+            }
         }
     }
 

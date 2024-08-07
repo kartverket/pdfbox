@@ -888,14 +888,7 @@ public abstract class PDFStreamEngine
         OperatorProcessor processor = operators.get(name);
         if (processor != null)
         {
-            try
-            {
-                processor.process(operator, operands);
-            }
-            catch (IOException e)
-            {
-                operatorException(operator, operands, e);
-            }
+            processor.process(operator, operands);
         }
         else
         {

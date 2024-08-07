@@ -220,18 +220,19 @@ public class PDPage implements COSObjectable, PDContentStream
                     .map(b -> (COSStream) b) //
                     .collect(Collectors.toList());
             List<RandomAccessRead> inputStreams = new ArrayList<>();
-            streams.forEach(stream ->
+            for (COSStream stream : streams)
             {
                 try
                 {
                     inputStreams.add(stream.createView());
                     inputStreams.add(new RandomAccessReadBuffer(DELIMITER));
                 }
-                catch (IOException exception)
+                catch (IOException e)
                 {
                     LOG.warn("malformed substream of content stream skipped");
+                    throw e; // Re-throw the exception to handle it at the higher level
                 }
-            });
+            }
             if (!inputStreams.isEmpty())
             {
                 return new SequenceRandomAccessRead(inputStreams);
