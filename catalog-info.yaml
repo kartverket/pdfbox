@@ -8,7 +8,7 @@ metadata:
 spec:
   type: "library"
   lifecycle: "production"
-  owner: "digibok"
+  owner: "eiet"
   system: "dokumentbestilling"
 ---
 apiVersion: "backstage.io/v1alpha1"
