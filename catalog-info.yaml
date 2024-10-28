@@ -8,31 +8,5 @@ metadata:
 spec:
   type: "library"
   lifecycle: "production"
-  owner: "eiet"
+  owner: "digibok"
   system: "dokumentbestilling"
----
-apiVersion: "backstage.io/v1alpha1"
-kind: "Group"
-metadata:
-  name: "security_champion_pdfbox"
-  title: "Security Champion pdfbox"
-spec:
-  type: "security_champion"
-  parent: "eiendom_security_champions"
-  members:
-  - "DanielBerge"
-  children:
-  - "resource:pdfbox"
----
-apiVersion: "backstage.io/v1alpha1"
-kind: "Resource"
-metadata:
-  name: "pdfbox"
-  links:
-  - url: "https://github.com/kartverket/pdfbox"
-    title: "pdfbox på GitHub"
-spec:
-  type: "repo"
-  owner: "security_champion_pdfbox"
-  dependencyOf:
-  - "component:pdfbox"
